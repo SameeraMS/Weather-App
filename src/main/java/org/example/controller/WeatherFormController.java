@@ -25,7 +25,7 @@ public class WeatherFormController {
         // get location from user
         String userInput = txtLocation.getText();
 
-        // validate input - remove whitespace to ensure non-empty text
+        // remove whitespace
         if(userInput.replaceAll("\\s", "").length() <= 0){
             return;
         }
@@ -52,18 +52,18 @@ public class WeatherFormController {
                 break;
         }
 
-        // update temperature text
+        // update temperature
         double temperature = (double) weatherData.get("temperature");
         lblTemp.setText(temperature + " C");
 
-        // update weather condition text
+        // update condition
         lblCondition.setText(weatherCondition);
 
-        // update humidity text
+        // update humidity
         long humidity = (long) weatherData.get("humidity");
         lblHumidity.setText(humidity + "%");
 
-        // update windspeed text
+        // update windspeed
         double windspeed = (double) weatherData.get("windspeed");
         lblSpeed.setText(windspeed + "km/h");
     }

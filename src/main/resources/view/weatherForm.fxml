@@ -1,33 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="623.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.WeatherFormController">
+<AnchorPane prefHeight="645.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.WeatherFormController">
    <children>
-      <TextField fx:id="txtLocation" layoutX="27.0" layoutY="26.0" onAction="#locationOnAction" prefHeight="39.0" prefWidth="291.0" />
-      <JFXButton layoutX="343.0" layoutY="32.0" onAction="#SearchOnAction" text="search" />
-      <ImageView fx:id="imgView" fitHeight="210.0" fitWidth="263.0" layoutX="91.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="lblTemp" layoutX="161.0" layoutY="374.0" prefHeight="27.0" prefWidth="124.0" text="tempreture" />
-      <Label fx:id="lblCondition" layoutX="161.0" layoutY="419.0" prefHeight="27.0" prefWidth="124.0" text="conditon" />
-      <ImageView fitHeight="103.0" fitWidth="82.0" layoutX="33.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="645.0" fitWidth="447.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/background.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtLocation" layoutX="36.0" layoutY="44.0" onAction="#locationOnAction" prefHeight="39.0" prefWidth="291.0" promptText="Enter Location">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" defaultButton="true" graphicTextGap="0.0" layoutX="344.0" layoutY="44.0" onAction="#SearchOnAction" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
+         <graphic>
+            <ImageView fitHeight="59.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/search.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ImageView fx:id="imgView" fitHeight="210.0" fitWidth="263.0" layoutX="84.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="lblTemp" alignment="CENTER" layoutX="158.0" layoutY="418.0" prefHeight="27.0" prefWidth="124.0" text="-- C">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <Label fx:id="lblCondition" alignment="CENTER" layoutX="145.0" layoutY="368.0" prefHeight="39.0" prefWidth="151.0" text="Condition">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font></Label>
+      <ImageView fitHeight="103.0" fitWidth="82.0" layoutX="12.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/humidity.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="103.0" fitWidth="82.0" layoutX="238.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="103.0" fitWidth="82.0" layoutX="215.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/windspeed.png" />
          </image>
       </ImageView>
-      <Label layoutX="111.0" layoutY="484.0" prefHeight="27.0" prefWidth="124.0" text="Humidity" />
-      <Label fx:id="lblHumidity" layoutX="111.0" layoutY="521.0" prefHeight="27.0" prefWidth="124.0" text="percentage" />
-      <Label layoutX="323.0" layoutY="489.0" prefHeight="27.0" prefWidth="110.0" text="WindSpeed" />
-      <Label fx:id="lblSpeed" layoutX="323.0" layoutY="526.0" prefHeight="27.0" prefWidth="110.0" text="speed" />
+      <Label layoutX="96.0" layoutY="519.0" prefHeight="27.0" prefWidth="124.0" text="Humidity">
+         <font>
+            <Font name="Times New Roman Bold" size="21.0" />
+         </font></Label>
+      <Label fx:id="lblHumidity" layoutX="96.0" layoutY="556.0" prefHeight="27.0" prefWidth="124.0" text="--">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <Label layoutX="304.0" layoutY="519.0" prefHeight="27.0" prefWidth="110.0" text="WindSpeed">
+         <font>
+            <Font name="Times New Roman Bold" size="21.0" />
+         </font></Label>
+      <Label fx:id="lblSpeed" layoutX="304.0" layoutY="556.0" prefHeight="27.0" prefWidth="110.0" text="-- km/h">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
    </children>
 </AnchorPane>
